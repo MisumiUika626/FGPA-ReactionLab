@@ -1,0 +1,57 @@
+# =========================
+# Quartus
+# =========================
+db/
+incremental_db/
+output_files/
+.qsys_edit/
+simulation/
+*.qws
+*.qdf
+*.qws.*
+*.sof
+*.pof
+*.jic
+*.rpt
+*.summary
+*.smsg
+
+# =========================
+# ModelSim
+# =========================
+work/
+transcript
+*.wlf
+*.vstf
+*.vcd
+*.ucdb
+*.mpf
+*.cr.mti
+modelsim.ini
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+.history/
+
+# =========================
+# Temporary files
+# =========================
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# =========================
+# Windows / macOS
+# =========================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# =========================
+# Microsoft Office
+# =========================
+~$*
