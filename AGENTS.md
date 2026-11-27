@@ -10,23 +10,24 @@
 
 - FPGA：Cyclone IV E，EP4CE6E22C8。
 - HDL：Verilog-2001。
-- 综合：Quartus Prime Lite 18.1.0。
-- 仿真：ModelSim - Intel FPGA Starter Edition。
-- WSL 负责代码编辑、Git 和 Agent 开发；Windows 负责仿真、综合及烧录。
-- 推荐将仓库放在 Windows 本地磁盘，通过 WSL 挂载路径访问同一份文件。
+- 综合：Quartus Prime Lite 18.1.0，本机安装于 `C:\intelFPGA_lite\18.1\quartus`。
+- 仿真：ModelSim - Intel FPGA Starter Edition，本机安装于 `C:\intelFPGA_lite\18.1\modelsim_ase`。
+- 开发流程：全程在 Windows 本地完成，VS Code 负责编辑，Git for Windows 负责版本管理，不使用 WSL。
+- 仓库位置：`D:\FPGA\FGPA-ReactionLab`，路径不含中文与空格，避免 Quartus 与 ModelSim 的路径解析问题。
+- 访问 GitHub 依赖本机代理（`socks5h://127.0.0.1:7897`，已写入 Git 全局配置）；代理未开启时克隆与推送会失败，与账号权限无关。
 - 工具路径使用本地配置，不得在公共脚本中硬编码个人路径。
 - 时钟频率、引脚及有效电平以 `docs/design.md` 中已确认的信息为准。
 
 ## 3. 分工与文件权限
 
-| 路径 | 职责 | 负责人 |
-| --- | --- | --- |
-| `rtl/core/` | 状态机、随机延时、反应计时、犯规及超时 | A |
-| `rtl/peripheral/` | 按键、历史记录、统计、显示 | B |
-| `rtl/top.v` | 顶层连接与集成 | A |
-| `tb/` | 各自模块的测试，A 负责集成测试 | A / B |
-| `docs/`、`scripts/`、`quartus/` | 公共文档、工具脚本、工程配置 | A |
-| `results/` | 实际测试结果与验收素材 | A / B |
+| 路径                                  | 职责                                   | 负责人 |
+| ------------------------------------- | -------------------------------------- | ------ |
+| `rtl/core/`                         | 状态机、随机延时、反应计时、犯规及超时 | A      |
+| `rtl/peripheral/`                   | 按键、历史记录、统计、显示             | B      |
+| `rtl/top.v`                         | 顶层连接与集成                         | A      |
+| `tb/`                               | 各自模块的测试，A 负责集成测试         | A / B  |
+| `docs/`、`scripts/`、`quartus/` | 公共文档、工具脚本、工程配置           | A      |
+| `results/`                          | 实际测试结果与验收素材                 | A / B  |
 
 仅修改当前任务授权的文件，不得擅自修改对方代码或公共文件。
 
@@ -68,4 +69,3 @@
 - 未经人工授权，不得推送远程代码、合并 PR、执行破坏性操作或烧录 FPGA。
 - 完成任务后简要报告：修改文件、实现原理、实际测试结果、已知问题。
 - 遵守课程关于原创性和 AI 辅助开发的规定，确保成员能解释自己的设计。
-
